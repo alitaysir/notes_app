@@ -14,26 +14,7 @@ const ContextProvider = ({children}) => {
       setuser(null)
     }
 
-    // useEffect(()=>{
-    //   const verifyUser= async()=>{
-    //     try {
-    //       const res= await axios.get('http://localhost:5000/api/auth/verify',{
-    //         headers: {
-    //           Authorization: `Bearer ${localStorage.getItem('token')}`,
-    //         },
-    //       });
-    //       if(res.data.success){
-    //         setuser(res.data.user)
-    //       }else{
-    //         setuser(null)
-    //       }
-    //     } catch (error) {
-    //       console.log(error)
-    //     }
-      
-    //   }
-    //   verifyUser()
-    // },[])
+
   return (
     <authcontext.Provider value={{user,login,logout}} >
         {children}
