@@ -1,6 +1,8 @@
 import React, { useState } from 'react'
 import axios from 'axios'
 import { Link, useNavigate } from 'react-router-dom'
+import {toast} from "react-toastify";
+
 
 
 
@@ -18,6 +20,17 @@ const Signup = () => {
             ,{name,email,password});
           if(response.data.success){
             navigate('/login')
+            toast.success("Account created", {
+              position: "top-right", // position at the top-right corner
+              autoClose: 2000,      // closes automatically after 2 seconds
+              hideProgressBar: true, // hides the progress bar
+              closeOnClick: true,
+              pauseOnHover: true,
+              draggable: true,
+              style: {
+                fontSize: "0.875rem", // smaller font size for the toast
+              }
+            });
           }
           //console.log(response)
         } catch (error) {

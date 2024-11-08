@@ -5,6 +5,8 @@ import axios from "axios";
 import Notecard from "../components/Notecard";
 import { useAuth } from "../context/ContextProvider";
 import { Link } from "react-router-dom";
+import {toast} from "react-toastify";
+
 
 const Home = () => {
   const [ismodalopen, setismodalopen] = useState(false);
@@ -56,7 +58,17 @@ const Home = () => {
       if (response.data.success) {
         fetchnote();
         closeModal();
-        //toast.success("Note added");
+        toast.success("Note added successfully", {
+          position: "top-right", // position at the top-right corner
+          autoClose: 2000,      // closes automatically after 2 seconds
+          hideProgressBar: true, // hides the progress bar
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          style: {
+            fontSize: "0.875rem", // smaller font size for the toast
+          }
+        });
       }
     } catch (error) {
       console.log(error);
@@ -77,7 +89,17 @@ const Home = () => {
       if (response.data.success) {
         fetchnote();
         closeModal();
-        //toast.success("Notes updated");
+        toast.success("Note edited sucessfully", {
+          position: "top-right", // position at the top-right corner
+          autoClose: 2000,      // closes automatically after 2 seconds
+          hideProgressBar: true, // hides the progress bar
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          style: {
+            fontSize: "0.875rem", // smaller font size for the toast
+          }
+        });
       }
     } catch (error) {
       console.log(error);
@@ -96,7 +118,17 @@ const Home = () => {
       );
       if (response.data.success) {
         fetchnote();
-        //toast.success("Note deleted");
+        toast.success("Note deleted successfully", {
+          position: "top-right", // position at the top-right corner
+          autoClose: 2000,      // closes automatically after 2 seconds
+          hideProgressBar: true, // hides the progress bar
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          style: {
+            fontSize: "0.875rem", // smaller font size for the toast
+          }
+        });
       }
     } catch (error) {
       console.log(error);

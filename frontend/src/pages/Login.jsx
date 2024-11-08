@@ -2,6 +2,8 @@ import React, { useState } from 'react'
 import axios from 'axios'
 import { Link, useNavigate } from 'react-router-dom'
 import { useAuth } from '../context/ContextProvider'
+import {toast} from "react-toastify";
+
 
 const Login = () => {
 
@@ -22,6 +24,17 @@ const Login = () => {
             login(response.data.user)
             localStorage.setItem("token",response.data.token)
             navigate('/')
+            toast.success("Logged in successfully", {
+              position: "top-right", // position at the top-right corner
+              autoClose: 2000,      // closes automatically after 2 seconds
+              hideProgressBar: true, // hides the progress bar
+              closeOnClick: true,
+              pauseOnHover: true,
+              draggable: true,
+              style: {
+                fontSize: "0.875rem", // smaller font size for the toast
+              }
+            });
           }
         } catch (error) {
           console.log(error)
