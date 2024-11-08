@@ -1,6 +1,8 @@
 import express from 'express'
 import cors from 'cors'
 import connectDB from './db/db.js'
+import dotenv from 'dotenv';
+dotenv.config();
 
 import authrouter from './routes/auth.js'
 import noterouter from './routes/note.js'
