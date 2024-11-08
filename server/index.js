@@ -15,7 +15,7 @@ app.use(express.json())
 app.use('/api/auth',authrouter)
 app.use('/api/note',noterouter)
 
-const PORT=5000
+const PORT=process.env.PORT
 
 
 app.listen(PORT,()=>{
